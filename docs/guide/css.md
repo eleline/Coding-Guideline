@@ -1,1 +1,1 @@
-# CSS / SCSS
+# CSS
