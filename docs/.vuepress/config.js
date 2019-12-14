@@ -1,25 +1,29 @@
 module.exports = {
   lang: "ja",
-  title: "コーディングガイドライン",
+  title: "コーディングガイドライン for ELELINE",
   description: "ELELINEのコーディングガイドライン",
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
-      { text: "About", link: "/guide/html" },
       { text: "GitHub", link: "https://github.com/eleline" }
     ],
     sidebar: [
-      ["/", "コーディングガイドラインについて"],
+      ["/", "このサイトについて"],
       {
         title: "ガイドライン",
         collapsable: false,
-        children: ["/guide/dev", "/guide/html", "/guide/css"]
-      }
-    ]
+        children: ["/guide/dev", "/guide/common", "/guide/html", "/guide/css"]
+      },
+    ],
+    sidebarDepth: 2
   },
   locales: {
     "/": {
       lang: "ja"
     }
+  },
+  markdown: {
+    linkify: true,
+    lineNumbers: true
   }
 };
