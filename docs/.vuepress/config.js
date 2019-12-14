@@ -23,7 +23,6 @@ module.exports = {
     }
   },
   markdown: {
-    linkify: true,
-    lineNumbers: true
+    linkify: true
   }
 };
