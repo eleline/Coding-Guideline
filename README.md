@@ -1,5 +1,7 @@
 # Coding Guideline for ELELINE
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dc05ed2f-f311-4657-8d6a-168f4c96e453/deploy-status)](https://app.netlify.com/sites/cg-eleline/deploys)
+
 ELELINE front-end coding guidelines.
 
 This is to unify awareness in the form of coding guidelines for web technologies that evolve daily.
