@@ -7,6 +7,7 @@ This is to unify awareness in the form of coding guidelines for web technologies
 ## Powered by
 
 - [VuePress](https://vuepress.vuejs.org/) - Static Web site generator
+- [Netlify](https://netlify.com/) - Static Web site hosting
 
 ## Licence
 
