@@ -1,4 +1,4 @@
-# Coding Guideline for ELELIEN
+# Coding Guideline for ELELINE
 
 ELELINE front-end coding guidelines.
 
