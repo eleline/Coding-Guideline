@@ -10,6 +10,7 @@
   "author": "ELELINE",
   "license": "MIT",
   "dependencies": {
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-reading-progress": "^1.0.8"
   }
 }

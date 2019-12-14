@@ -24,5 +24,8 @@ module.exports = {
   },
   markdown: {
     linkify: true
-  }
+  },
+  plugins: [
+    'reading-progress'
+  ]
 };
