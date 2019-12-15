@@ -1,5 +1,8 @@
 # Coding Guideline for ELELINE
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dc05ed2f-f311-4657-8d6a-168f4c96e453/deploy-status)](https://app.netlify.com/sites/cg-eleline/deploys)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/eleline/Coding-Guideline/blob/master/LICENSE.txt)
+
 ELELINE front-end coding guidelines.
 
 This is to unify awareness in the form of coding guidelines for web technologies that evolve daily.
