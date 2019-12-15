@@ -18,17 +18,14 @@ Set up with yarn or npm.
 
 ```bash
 # Packages install
-
 $ yarn install
 $ npm install
 
 # Develop on local server 
-
 $ yarn dev
 $ npm run dev
 
 # Build 
-
 $ yarn build
 $ npm run build
 ```
