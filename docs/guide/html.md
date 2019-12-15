@@ -87,16 +87,30 @@ HTML タグ内の無駄なスペースはパフォーマンスも下げるため
 
 ```diff
 + <a href="//orenosite.com/img/hoge">
+``` 
+
+## CSS の呼び出し 
+
+ファーストビューに利用する CSS には `rel="preload"` を付ける。 
+
+```html
+<link rel="preload" href="first-view.css" as="style">
 ```
 
-## JavaScriptの呼び出し
+::: theorem preload について 
+`<link>` 要素の rel 属性で preload を指定すると、 HTML の `<head>` 要素内で読み込みリクエストを宣言し、ページのライフサイクルの早期の、ブラウザーの主なレンダリング機構が起動する前に読み込みを始めたい、すぐに必要なリソースを指定することができます。これにより、そのリソースがより早く利用でき、ページのレンダリングがブロックされにくくなり、性能が向上します。 
 
-`script` タグには、 `async` か `defer` をつける。
+::: right 
+From [MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_content)
+:::
 
-- async : 非同期に読み込んで良いスクリプト
-- defer : 前提となるスクリプトがあり、読み込み順のあるスクリプト
+## JavaScript の呼び出し
 
-### async
+`script` タグには、パフォーマンス向上のため、 `async` か `defer` をつけれないか検討する。
+
+### async 
+
+非同期に読み込んで良いスクリプトにつける。 
 
 ```diff
 - <script src="/assets/js/script.js">
@@ -104,7 +118,9 @@ HTML タグ内の無駄なスペースはパフォーマンスも下げるため
 + <script src="/assets/js/script.js" async>
 ```
 
-### defer
+### defer 
+
+前提となるスクリプトがあり、読み込み順のあるスクリプトにつける。
 
 ```diff
 - <script src="/assets/js/jquery.js">
