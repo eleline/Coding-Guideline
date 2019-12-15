@@ -28,7 +28,6 @@ module.exports = {
   plugins: [
     "reading-progress",
     "smooth-scroll",
-    ["container", { type: "right", dafaultTitle: "" }],
     ['container', {
       type: 'right',
       defaultTitle: '',
