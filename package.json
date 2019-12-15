@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "vuepress": "^1.2.0",
-    "vuepress-plugin-reading-progress": "^1.0.8"
+    "vuepress-plugin-reading-progress": "^1.0.8",
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
   }
 }

@@ -13,7 +13,7 @@ module.exports = {
         title: "ガイドライン",
         collapsable: false,
         children: ["/guide/dev", "/guide/common", "/guide/html", "/guide/css"]
-      },
+      }
     ],
     sidebarDepth: 2
   },
@@ -25,7 +25,5 @@ module.exports = {
   markdown: {
     linkify: true
   },
-  plugins: [
-    'reading-progress'
-  ]
+  plugins: ["reading-progress", "vuepress-plugin-smooth-scroll"]
 };
