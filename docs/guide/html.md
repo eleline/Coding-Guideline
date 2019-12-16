@@ -181,6 +181,12 @@ From [MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_co
 <a href="https://eleline.me/" target="_blank" rel="external noopener"></a>
 ``` 
 
+::: tip nofollow について 
+`nofollow` はリンク先のウェブページ評価を無効であることを伝える。 
+
+SEO にも関係があり、`nofollow` を指定することにより、リンク先とサイトを関連付けないように伝えることができる。
+::: 
+
 ::: theorem target="_blank" の脆弱性 Tabnabbing について 
 target="_blank" を使用して任意のページから別のページにリンクしている場合、リンク元のページとリンク先のページは同じプロセスで動作します。 
 
@@ -189,12 +195,6 @@ target="_blank" を使用して任意のページから別のページにリン�
 ::: right 
 From [Tools for Web Developers](https://developers.google.com/web/tools/lighthouse/audits/noopener?hl=ja)
 
-::: 
-
-::: tip nofollow について 
-`nofollow` はリンク先のウェブページ評価を無効であることを伝える。 
-
-SEO にも関係があり、`nofollow` を指定することにより、リンク先とサイトを関連付けないように伝えることができる。
 ::: 
 
 ::: theorem rel 属性の種類について 
