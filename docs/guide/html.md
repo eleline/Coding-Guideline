@@ -44,8 +44,9 @@ UTF-8、LF を使用する
 
 ## 大文字/小文字
 
-小文字のみを使用する
-ただし alt 属性など値が文字列の場合は使用可能
+小文字のみを使用する。 
+
+ただし alt 属性など値が文字列の場合は使用可能。
 
 ```diff
 - <A href="/">Bad</A>
@@ -59,7 +60,7 @@ UTF-8、LF を使用する
 
 半角スペースオンリー
 
-HTML タグ内の無駄なスペースはパフォーマンスも下げるため禁止。
+HTML 要素内の無駄なスペースはパフォーマンスも下げるため禁止。
 
 ```diff
 - <p >Bad</p>
@@ -110,9 +111,21 @@ HTML タグ内の無駄なスペースはパフォーマンスも下げるため
 From [MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_content)
 :::
 
+## 画像の呼び出し 
+
+`img` 要素を用いて、画像を呼び出す際には必ず `alt` 属性をつけるようにする。 
+
+`alt` は画像が表示されない場合に代替テキストを表示したり、読み上げ機能にも認識される。 Lighthouse のアクセシビリティ評価項目にもあるので対応する。
+
+```diff 
+- <img src="hoge.jpg"> 
+
++ <img src="hoge.jpg" alt="hogeの写真">
+```
+
 ## JavaScript の呼び出し
 
-`script` タグには、パフォーマンス向上のため、 `async` か `defer` をつけれないか検討する。
+`script` 要素には、パフォーマンス向上のため、 `async` か `defer` をつけれないか検討する。
 
 ### async 
 
@@ -134,4 +147,69 @@ From [MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_co
 
 + <script src="/assets/js/jquery.js" defer>
 + <script src="/assets/js/jquery-script.js" defer>
+``` 
+
+## セクション 
+
+`section` 要素を使う際には必ず見出しの要素 (`h1 ~ h6`)を1つ以上包含する。 
+
+```html 
+<section>
+  <h2>タイトル</h2>
+  <p>猫はかわいい</p>
+</section>
+``` 
+
+::: warning section 要素を利用する上での注意  
+要素が単独で機能する場合は `article` 要素を使う。 
+
+`section` 要素を単なる汎用コンテナとしか使わない。
+この使い方をするのであれば、その要素は `div` が正しい。 
+:::
+
+## リスト 
+
+リストを作る際、 `ul` または `ol` 要素直下に必ず `li` 要素のみを使う。 
+
+```diff 
+- <ul>
+-     <div>Sample01</div>
+-     <div>Sample02</div>
+-     <div>Sample03</div>
+- </ul>
+
++ <ul>
++     <li>Sample01</li>
++     <li>Sample02</li>
++     <li>Sample03</li>
++ </ul>
 ```
+ 
+::: theorem ol 要素との違い 
+`ul` 要素には中身の順序に意味を持たず、 `ol` 要素は順序に意味を持つという違いがある。 
+
+::: right 
+From [MDN web docs](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ul)
+::: 
+
+## ボタン 
+
+ボタンを使う場合は `<input type="button">` よりも `button` 要素を使うようにする。 
+
+理由としては、`<input type="button">` は `value` 属性にテキスト文字列しか設定できないが、`button` 要素には HTML 要素を包含することが可能であること、更に疑似要素を扱えることの2点から。 
+
+::: tip type 属性について 
+`button` 要素のデフォルトの `type` 属性は `submit` になっている為、選択するとフォームのデータを送るものになっているが、これは `type` 属性を `button` に変更することで、単なるボタンとして利用することが可能。 
+::: 
+
+::: warning 説明テキストを含まない button 要素について 
+`button` 要素内に説明テキストを持たない場合 (アイコンのみなど) は、 `aria-label` による説明の追加、または要素内に説明テキストを挿入できないかどうか検討する。 
+
+上記の2点のいずれかが不足している場合、読み上げの際にスルーされ、Lighthouse によるアクセシビリティの評価も下がる。 
+
+```html 
+<button type="button" aria-label="ホームに戻る">
+  <i class="fas fa-home"></i>
+</button>
+```
+:::
