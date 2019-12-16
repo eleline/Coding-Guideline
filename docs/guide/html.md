@@ -167,6 +167,46 @@ From [MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_co
 この使い方をするのであれば、その要素は `div` が正しい。 
 :::
 
+## リンク 
+
+ページ内リンクや外部サイトへのリンクは `a` 要素を利用する。 
+
+外部サイトへのリンクには別タブで開くように `target="_blank"` に加え `rel="noopener"` を指定する。 
+
+`rel="noopener"` を指定することで、`target="_blank"` のセキュリティとパフォーマンスの低下を防ぐことができる。 
+
+`rel="external"` はそのリンクが外部リンクであることをブラウザに伝える。
+
+```html
+<a href="https://eleline.me/" target="_blank" rel="external noopener"></a>
+``` 
+
+::: theorem target="_blank" の脆弱性 Tabnabbing について 
+target="_blank" を使用して任意のページから別のページにリンクしている場合、リンク元のページとリンク先のページは同じプロセスで動作します。 
+
+そのため、リンク先のページで負荷の高い JavaScript が実行されていると、リンク元のページのパフォーマンスが低下するおそれがあります。
+
+::: right 
+From [Tools for Web Developers](https://developers.google.com/web/tools/lighthouse/audits/noopener?hl=ja)
+
+::: 
+
+::: tip nofollow について 
+`nofollow` はリンク先のウェブページ評価を無効であることを伝える。 
+
+SEO にも関係があり、`nofollow` を指定することにより、リンク先とサイトを関連付けないように伝えることができる。
+::: 
+
+::: theorem rel 属性の種類について 
+| rel の値 | 説明 |
+| ------------- | ------------- |
+| rel="sponsored" | 広告や有料プレースメントのリンク |
+| rel="ugc" | コメントやフォーラム投稿など、ユーザー作成コンテンツ（UGC）のリンク | 
+
+::: right 
+From [Google Search Concole ヘルプ](https://support.google.com/webmasters/answer/96569?hl=ja)
+:::
+
 ## リスト 
 
 リストを作る際、 `ul` または `ol` 要素直下に必ず `li` 要素のみを使う。 
@@ -203,7 +243,7 @@ From [MDN web docs](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ul)
 ::: 
 
 ::: warning 説明テキストを含まない button 要素について 
-`button` 要素内に説明テキストを持たない場合 (アイコンのみなど) は、 `aria-label` による説明の追加、または要素内に説明テキストを挿入できないかどうか検討する。 
+`button` 要素内に説明テキストを持たない場合 (アイコンのみなど) は、`aria-label` による説明の追加、または要素内に説明テキストを挿入できないかどうか検討する。 
 
 上記の2点のいずれかが不足している場合、読み上げの際にスルーされ、Lighthouse によるアクセシビリティの評価も下がる。 
 
