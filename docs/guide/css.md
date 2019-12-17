@@ -129,9 +129,16 @@ id はページ内に1つしか使えないため、汎用性がない。それ�
 
 ## ベンダープレフィックス
 
-ベンダープレフィックスは、人の手ではやらずに `autoprefixer` で対応する。
+ベンダープレフィックスの指定は、人の手ではやらずに [autoprefixer](https://github.com/postcss/autoprefixer)  で対応する。
 
-[autoprefixer](https://github.com/postcss/autoprefixer) 
+CSS の標準規格ではないプロパティについては、ベンダープレフィックスの指定が必要。 
+
+```scss
+.content {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+```
 
 ## 汎用クラス 
 
