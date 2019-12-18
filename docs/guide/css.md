@@ -123,7 +123,7 @@ id はページ内に1つしか使えないため、汎用性がない。それ�
 
 ## ベンダープレフィックス
 
-ベンダープレフィックスの指定は、人の手ではやらずに [autoprefixer](https://github.com/postcss/autoprefixer)  で対応する。
+ベンダープレフィックスの指定は、人の手ではやらずに [autoprefixer](https://github.com/postcss/autoprefixer) で対応する。
 
 CSS の標準規格ではないプロパティについては、ベンダープレフィックスの指定が必要。 
 

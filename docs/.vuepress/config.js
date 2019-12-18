@@ -12,7 +12,13 @@ module.exports = {
       {
         title: "ガイドライン",
         collapsable: false,
-        children: ["/guide/dev", "/guide/common", "/guide/html", "/guide/css"]
+        children: [
+          "/guide/dev",
+          "/guide/common",
+          "/guide/html",
+          "/guide/css",
+          "/guide/js"
+        ]
       }
     ],
     sidebarDepth: 2
@@ -28,14 +34,20 @@ module.exports = {
   plugins: [
     "reading-progress",
     "smooth-scroll",
-    ['container', {
-      type: 'right',
-      defaultTitle: '',
-    }],
-    ['container', {
-      type: 'theorem',
-      before: info => `<div class="theorem"><p class="title">${info}</p>`,
-      after: '</div>',
-    }],
+    [
+      "container",
+      {
+        type: "right",
+        defaultTitle: ""
+      }
+    ],
+    [
+      "container",
+      {
+        type: "theorem",
+        before: info => `<div class="theorem"><p class="title">${info}</p>`,
+        after: "</div>"
+      }
+    ]
   ]
 };
