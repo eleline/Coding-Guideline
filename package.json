@@ -10,6 +10,8 @@
   "author": "ELELINE",
   "license": "MIT",
   "dependencies": {
+    "textlint": "^11.5.0",
+    "textlint-rule-preset-jtf-style": "^2.3.4",
     "vuepress": "^1.2.0",
     "vuepress-plugin-container": "^2.1.2",
     "vuepress-plugin-reading-progress": "^1.0.8",
